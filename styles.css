@@ -1,25 +1,483 @@
-.navbar {
-    background-color: #D4AF37;
-    color: white;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;500&family=Inter:wght@300;400&display=swap');
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-    font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0a0a1a, #1a0a2a, #0a0a1a);
+  background-attachment: fixed;
+  color: #e5e5e5;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-    color: #D4AF37;
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
-a {
-    color: #D4AF37;
-    text-decoration: none;
+h1 {
+  font-size: 3.5rem;
 }
 
-a:hover {
-    text-decoration: underline;
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Navigation - Fixed Glassmorphism */
+.nav {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.nav ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 40px;
+  padding: 12px 30px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav a {
+  text-decoration: none;
+  color: #e5e5e5;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 1px;
+  background: #e5e5e5;
+  transition: width 0.4s ease;
+}
+
+.nav a:hover {
+  opacity: 0.7;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(10, 10, 30, 0.3), rgba(26, 26, 46, 0.5)), url('assets/gem-og.png');
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  transform: translateY(-40px);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 2px;
+}
+
+.hero p {
+  margin-top: 15px;
+  opacity: 0.8;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+/* Origin Section Image */
+.origin-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 20px;
+  margin: 30px auto;
+  display: block;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.origin-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 45px rgba(255, 255, 255, 0.1);
+}
+
+/* Essence Section Image */
+.essence-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 20px;
+  margin: 30px auto;
+  display: block;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.essence-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 45px rgba(255, 255, 255, 0.1);
+}
+/* Craft Section Image */
+.craft-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 20px;
+  margin: 30px auto;
+  display: block;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+/* Sections */
+.section {
+  padding: 100px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.section.dark {
+  background: #08080c;
+  border-radius: 20px;
+  margin: 20px auto;
+}
+/* Section Buttons */
+.section-btn {
+  display: inline-block;
+  background: transparent;
+  color: #e5e5e5;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 12px 28px;
+  margin-top: 25px;
+  border: 1px solid #e5e5e5;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  backdrop-filter: blur(5px);
+}
+
+.section-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.section-btn:active {
+  transform: translateY(0px);
+}
+
+/* Gallery */
+.gallery {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.card {
+  height: 280px;
+  background: linear-gradient(145deg, #0c0c14, #020204);
+  border-radius: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Placeholder for gem images */
+.card:nth-child(1)::after {
+  content: "💎";
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card:nth-child(2)::after {
+  content: "✨";
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card:nth-child(3)::after {
+  content: "🔮";
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+/* Bio Section with Image & Biography */
+.bio-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #08080c, #0a0a14);
+  position: relative;
+  overflow: hidden;
+}
+
+.bio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Bio Image - Move Up */
+.bio-image {
+  flex: 1;
+  min-width: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform: translateY(-600px);  /* 👈 ADD THIS - moves image up */
+}
+
+.bio-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+.bio-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.bio-image:hover img {
+  transform: scale(1.05);
+}
+
+.bio-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.bio-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #e5e5e5;
+  margin-bottom: 10px;
+}
+
+.bio-subtitle {
+  font-size: 1.1rem;
+  color: #a0a0b0;
+  margin-bottom: 30px;
+  font-style: italic;
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+  padding-left: 15px;
+}
+
+/* Biography Styles */
+.biography {
+  margin: 30px 0;
+}
+
+.biography h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #c0c0d0;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.biography p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #d0d0e0;
+  text-align: justify;
+}
+
+.bio-signature {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bio-signature p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  color: #e5e5e5;
+}
+
+.bio-signature span {
+  font-size: 0.9rem;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+.footer {
+  padding: 40px;
+  text-align: center;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes softGlow {
+  0% { filter: brightness(0.9); }
+  50% { filter: brightness(1.1); }
+  100% { filter: brightness(0.9); }
+}
+
+.hero {
+  animation: softGlow 8s ease-in-out infinite;
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav ul {
+    gap: 20px;
+    padding: 8px 20px;
+  }
+  
+  .nav a {
+    font-size: 0.75rem;
+  }
+  
+  .section {
+    padding: 60px 20px;
+  }
+  
+  .grid {
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .card {
+    height: 220px;
+  }
+  
+  /* Bio responsive */
+  .bio-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .bio-subtitle {
+    border-left: none;
+    padding-left: 0;
+  }
+  
+  .bio-content h2 {
+    font-size: 2rem;
+  }
+  
+  .biography h3 {
+    font-size: 1.3rem;
+  }
+  
+  .biography p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav ul {
+    gap: 12px;
+    padding: 6px 15px;
+  }
+  
+  .nav a {
+    font-size: 0.7rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .bio-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .biography h3 {
+    font-size: 1.2rem;
+  }
 }
