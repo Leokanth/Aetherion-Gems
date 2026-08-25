@@ -1865,6 +1865,36 @@ body {
   box-shadow:
     0 10px 35px rgba(214, 181, 106, 0.15);
 }
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.contact-details a {
+  color: rgba(255, 255, 255, 0.62);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-details a:hover {
+  color: #d6b56a;
+
+  transform: translateY(-1px);
+}
 
 /* =========================
    CONTACT MOBILE
@@ -1897,5 +1927,15 @@ body {
 
     padding: 14px 25px;
   }
+    .contact-details {
+    margin-top: 26px;
 
+    gap: 10px;
+  }
+
+  .contact-details a {
+    font-size: 12px;
+
+    letter-spacing: 0.05em;
+  }
 }
