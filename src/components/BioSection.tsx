@@ -6,7 +6,7 @@ function BioSection() {
 
         <div className="bio-image">
           <img
-            src="/images/machi-bio.png"
+            src={`${import.meta.env.BASE_URL}images/machi-bio.png`}
             alt="Ilonthan, founder of Aetherion Gems"
           />
         </div>

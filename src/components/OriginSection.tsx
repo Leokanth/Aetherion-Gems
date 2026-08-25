@@ -5,9 +5,9 @@ function OriginSection() {
       {/* Background Image */}
       <div className="origin-image">
         <img
-          src="/images/gem3-bg.png"
-          alt="Natural gemstone representing the geological origin of Aetherion Gems"
-        />
+  src={`${import.meta.env.BASE_URL}images/gem3-bg.png`}
+  alt="Natural gemstone representing the geological origin of Aetherion Gems"
+/>
       </div>
 
       {/* Dark cinematic overlay */}

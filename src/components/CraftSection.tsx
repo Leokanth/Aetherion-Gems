@@ -4,8 +4,8 @@ function CraftSection() {
 
       <div className="craft-image">
         <img
-          src="/images/gem2-bg.png"
-          alt="Gemstone craftsmanship"
+          src={`${import.meta.env.BASE_URL}images/gem2-bg.png`}
+          alt="Gemstone craftmanship"
         />
       </div>
 

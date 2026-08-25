@@ -26,7 +26,7 @@ function GallerySection() {
 
         <article className="gallery-card">
           <img
-            src="/images/gem2-bg.png"
+            src={`${import.meta.env.BASE_URL}images/gem2-bg.png`}
             alt="Aetherion gemstone collection"
           />
 
@@ -39,7 +39,7 @@ function GallerySection() {
 
         <article className="gallery-card">
           <img
-            src="/images/gem3-bg.png"
+           src={`${import.meta.env.BASE_URL}images/gem3-bg.png`}
             alt="Natural gemstone"
           />
 
@@ -52,7 +52,7 @@ function GallerySection() {
 
         <article className="gallery-card">
           <img
-            src="/images/home2-bg.png"
+            src={`${import.meta.env.BASE_URL}images/home2-bg.png`}
             alt="Aetherion gemstone"
           />
 
