@@ -7,7 +7,7 @@ function BioSection() {
         <div className="bio-image">
           <img
             src={`${import.meta.env.BASE_URL}images/machi-bio.png`}
-            alt="Ilonthan, founder of Aetherion Gems"
+            alt="Leokanth, founder of Aetherion Gems"
           />
         </div>
 
@@ -31,7 +31,7 @@ function BioSection() {
           </p>
 
           <p className="bio-introduction">
-            For Ilonthan, gemstones are more than objects of
+            For the curator, gemstones are more than objects of
             beauty. They are fragments of geological history,
             shaped by forces that existed long before humanity.
           </p>
@@ -45,7 +45,7 @@ function BioSection() {
           </a>
 
           <div className="bio-signature">
-            <strong>— Ilonthan</strong>
+            <strong>— Leokanth</strong>
             <span>Founder · Aetherion Gems</span>
           </div>
 

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 function Navbar() {
@@ -11,8 +12,10 @@ function Navbar() {
     <nav className="navbar">
 
       <a href="#home" className="navbar-logo" onClick={closeMenu}>
-        AETHERION
-        <span>GEMS</span>
+        <img
+          src="/images/aetherion-logo.png"
+          alt="Aetherion Gems"
+        />
       </a>
 
       <button
@@ -31,32 +34,32 @@ function Navbar() {
       >
 
         <a href="#home" onClick={closeMenu}>
-  Home
-</a>
+          Home
+        </a>
 
-<a href="#origin" onClick={closeMenu}>
-  Origin
-</a>
+        <a href="#origin" onClick={closeMenu}>
+          Origin
+        </a>
 
-<a href="#essence" onClick={closeMenu}>
-  Essence
-</a>
+        <a href="#essence" onClick={closeMenu}>
+          Essence
+        </a>
 
-<a href="#craft" onClick={closeMenu}>
-  Craft
-</a>
+        <a href="#craft" onClick={closeMenu}>
+          Craft
+        </a>
 
-<a href="#gallery" onClick={closeMenu}>
-  Gallery
-</a>
+        <a href="#gallery" onClick={closeMenu}>
+          Gallery
+        </a>
 
-<a href="#bio" onClick={closeMenu}>
-  Bio
-</a>
+        <a href="#bio" onClick={closeMenu}>
+          Bio
+        </a>
 
-<a href="#contact" onClick={closeMenu}>
-  Contact
-</a>
+        <a href="#contact" onClick={closeMenu}>
+          Contact
+        </a>
 
       </div>
 
@@ -65,3 +68,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
