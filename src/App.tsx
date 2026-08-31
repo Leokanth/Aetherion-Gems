@@ -37,9 +37,9 @@ function App() {
               revealed through light, craft, and human hands.
             </p>
 
-            <a href="#origin" className="hero-button">
-              Explore the Collection
-            </a>
+            <a href="/collection/collection.html" className="hero-button">
+  Explore the Collection
+</a>
           </div>
         </section>
 
